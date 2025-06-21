@@ -17,11 +17,11 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-# define BUFFER_SIZE 1
+// # define BUFFER_SIZE 1
 
 char	*get_next_line(int fd);
 void	*ft_calloc(size_t nmemb, size_t size);
-char	*append_char(char *old, char new_c);
+char	*append_n_str(char *old, char *read, size_t index_lf);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t dsize);
 

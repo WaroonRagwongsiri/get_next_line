@@ -70,17 +70,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 	return (len_d + len_s);
 }
 
-char	*append_char(char *old, char new_c)
+char	*append_n_str(char *old, char *read, size_t index_lf)
 {
 	char	*new;
 	size_t	len_old;
 
 	len_old = ft_strlen(old);
-	new = ft_calloc(len_old + 2, 1);
+	new = ft_calloc((len_old + index_lf + 1), 1);
 	if (!new)
 		return (NULL);
 	ft_strlcat(new, old, len_old + 1);
-	new[len_old] = new_c;
+	ft_strlcat(new, read, len_old + index_lf + 1);
 	free(old);
 	return (new);
 }
