@@ -21,9 +21,6 @@ char	*get_next_line(int fd)
 	size_t	bytes_read;
 	size_t	index_lf;
 
-	index_lf = -1;
-	while (++index_lf < BUFFER_SIZE)
-		buffer[BUFFER_SIZE] = 0;
 	sol = ft_calloc(1, 1);
 	if (!sol || fd < 0)
 		return (NULL);
@@ -32,7 +29,8 @@ char	*get_next_line(int fd)
 	{
 		index_lf = 0;
 		bytes_read = read(fd, buffer, sizeof(buffer));
-		while (buffer[index_lf] && buffer[index_lf] != '\n')
+		buffer[bytes_read] = '\0';
+		while (index_lf < bytes_read && buffer[index_lf] != '\n')
 			index_lf++;
 		sol = append_n_str(sol, buffer, index_lf);
 		if (!sol)
