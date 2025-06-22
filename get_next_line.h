@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-// # define BUFFER_SIZE 1
+# define BUFFER_SIZE 42
 
 char	*get_next_line(int fd);
 void	*ft_calloc(size_t nmemb, size_t size);
