@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/21 12:55:00 by marvin            #+#    #+#             */
-/*   Updated: 2025/06/22 22:39:09 by marvin           ###   ########.fr       */
+/*   Created: 2025/06/22 22:45:18 by waroonwork@       #+#    #+#             */
+/*   Updated: 2025/06/25 20:39:35 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 char	*get_next_line(int fd);
+int		check_empty(char *str);
 
 char	*get_next_line(int fd)
 {
@@ -26,8 +27,6 @@ char	*get_next_line(int fd)
 	if (!sol)
 		return (NULL);
 	bytes_read = 1;
-	buffer[0] = 0;
-	buffer[1] = 0;
 	while (bytes_read > 0)
 	{
 		bytes_read = read(fd, buffer, 1);
@@ -38,5 +37,17 @@ char	*get_next_line(int fd)
 		if (buffer[0] == '\n')
 			return (sol);
 	}
+	if (check_empty(sol))
+		return (NULL);
 	return (sol);
+}
+
+int	check_empty(char *str)
+{
+	if (str[0] == '\0')
+	{
+		free(str);
+		return (1);
+	}
+	return (0);
 }

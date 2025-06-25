@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/21 12:55:02 by marvin            #+#    #+#             */
-/*   Updated: 2025/06/21 12:55:02 by marvin           ###   ########.fr       */
+/*   Created: 2025/06/22 22:44:19 by waroonwork@       #+#    #+#             */
+/*   Updated: 2025/06/22 22:44:19 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
