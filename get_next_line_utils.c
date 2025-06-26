@@ -78,9 +78,28 @@ char	*append_n_str(char *old, char *read, size_t index_lf)
 	len_old = ft_strlen(old);
 	new = ft_calloc((len_old + index_lf + 1), 1);
 	if (!new)
+	{
+		free(old);
 		return (NULL);
+	}
 	ft_strlcat(new, old, len_old + 1);
 	ft_strlcat(new, read, len_old + index_lf + 1);
 	free(old);
 	return (new);
+}
+
+ssize_t	ft_strchr(const char *s, int c)
+{
+	ssize_t	i;
+	ssize_t	len;
+
+	i = 0;
+	len = ft_strlen(s);
+	while (i <= len)
+	{
+		if (s[i] == c)
+			return (i);
+		i++;
+	}
+	return (-1);
 }

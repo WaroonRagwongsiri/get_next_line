@@ -24,5 +24,10 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*append_n_str(char *old, char *read, size_t index_lf);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t dsize);
+ssize_t	ft_strchr(const char *s, int c);
+char	*read_file(int fd);
+char	*update_readed(int fd, char *old_readed);
+char	*get_line(char *readed);
+char	*trim_read(char *old_readed);
 
 #endif
