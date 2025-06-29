@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 22:45:18 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/06/28 00:54:57 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/06/29 14:43:59 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd);
 
 char	*get_next_line(int fd)
 {
-	static char	*readed;
+	static char	*readed[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	readed = update_readed(fd, readed);
-	if (!readed)
+	readed[fd] = update_readed(fd, readed[fd]);
+	if (!readed[fd])
 		return (NULL);
-	line = get_line(readed);
-	readed = trim_read(readed);
+	line = get_line(readed[fd]);
+	readed[fd] = trim_read(readed[fd]);
 	if (line[0] == '\0')
 	{
 		free(line);
