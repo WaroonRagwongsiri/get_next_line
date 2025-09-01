@@ -6,7 +6,7 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 22:45:18 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/09/01 11:37:49 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/09/01 11:43:52 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = get_line(readed[fd]);
 	readed[fd] = trim_read(readed[fd]);
-	if (line[0] == '\0')
-	{
-		free(line);
+	if (!line)
 		return (NULL);
-	}
+	if (line[0] == '\0')
+		return (free(line), NULL);
 	return (line);
 }
 

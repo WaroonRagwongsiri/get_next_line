@@ -6,3 +6,4 @@ gnlTester
 .vscode
 malloc_strike.c
 *.gch
+*.sh
