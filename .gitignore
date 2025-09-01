@@ -4,3 +4,5 @@
 gnl-station-tester
 gnlTester
 .vscode
+malloc_strike.c
+*.gch
