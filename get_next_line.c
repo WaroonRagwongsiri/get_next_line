@@ -6,7 +6,7 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 22:45:18 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/09/01 11:24:16 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/09/01 11:37:29 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,7 @@ char	*read_file(int fd)
 	{
 		byte_reads = read(fd, buffer, BUFFER_SIZE);
 		if (byte_reads < 0)
-		{
-			free(reading);
-			return (NULL);
-		}
+			return (free(buffer), free(reading), NULL);
 		buffer[byte_reads] = '\0';
 		reading = append_n_str(reading, buffer, byte_reads);
 		if (!reading || ft_strchr(buffer, '\n') >= 0)
