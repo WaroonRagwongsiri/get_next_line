@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waragwon <waragwon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 22:45:18 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/08/31 21:31:02 by waragwon         ###   ########.fr       */
+/*   Updated: 2025/09/01 11:24:16 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*get_next_line(int fd);
 
 char	*get_next_line(int fd)
 {
-	static char	*readed;
+	static char	*readed = NULL;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
